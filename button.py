@@ -14,8 +14,8 @@ class Button:
 
         w, h = width/2.0, height/2.0
         x,y = center.getX(), center.getY()
-        self.xmax, self.xmin = x+w, x-w
-        self.ymax, self.ymin = y+h, y-h
+        self.xmax, self.xmin = x + w, x - w
+        self.ymax, self.ymin = y + h, y - h
         p1 = Point(self.xmin, self.ymin)
         p2 = Point(self.xmax, self.ymax)
         self.rect = Rectangle (p1, p2)
