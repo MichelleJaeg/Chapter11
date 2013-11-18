@@ -10,19 +10,19 @@ from cardPoker import Card
 
 def main ():
     # open file
-    infile=open("cardsFor13", 'r')
+    infile = open("cardsFor13", 'r')
     # create list of card objects
-    cardObjects=[]
+    cardObjects = []
     for line in infile:
-        items=line.split()
-        rank=int(items[0])
-        suit=items[1]
-        card=Card(rank,suit)
+        items = line.split()
+        rank = int(items[0])
+        suit = items[1]
+        card = Card(rank,suit)
         cardObjects.append(card)
     # Sort list by rank
-    cardObjects.sort(key=Card.getRank)
+    cardObjects.sort(key = Card.getRank)
     # Sort list by suit
-    cardObjects.sort(key=Card.getSuit)
+    cardObjects.sort(key = Card.getSuit)
 
     # print out cards
     for card in cardObjects:
@@ -52,5 +52,5 @@ def main ():
 
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main ()
