@@ -9,35 +9,35 @@ import string
 def main ():
 
     # Get input file
-    file=input("Please enter the name of the original file. ")
-    infile=open(file, 'r')
+    file = input("Please enter the name of the original file. ")
+    infile = open(file, 'r')
 
     # get output file
-    otherFile=input("Please enter the name of the file to write to. ")
-    outfile=open(otherFile, 'w')
+    otherFile = input("Please enter the name of the file to write to. ")
+    outfile = open(otherFile, 'w')
 
     # Change file
     for line in infile:
-        words=line.split( )
+        words = line.split( )
         for word in words:
-            counter=0
+            counter = 0
             for letter in word:
                 if not letter in string.punctuation:
-                    counter+=1
-            if counter==4:
+                    counter += 1
+            if counter == 4:
                 if "." in word:
-                    word="****."
+                    word = "****."
                 elif "," in word:
-                    word="****,"
+                    word = "****,"
                 elif "?" in word:
-                    word="****?"
+                    word = "****?"
                 elif "!" in word:
-                    word="****!"
+                    word = "****!"
                 else:
-                    word="****"
+                    word = "****"
 
 
-            print (word + " ", file=outfile, end="")
+            print (word + " ", file = outfile, end = "")
 
     # close files
     infile.close()
