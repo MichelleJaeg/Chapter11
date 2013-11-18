@@ -8,8 +8,8 @@ import math
 class StatSet:
 
     def __init__(self):
-        a_set=set()
-        self.a_set=a_set
+        a_set = set()
+        self.a_set = a_set
 
     def addNumber(self,x):
         self.a_set.add(x)
@@ -22,7 +22,7 @@ class StatSet:
 
     def median (self):
         # put items in list and sort
-        list=[]
+        list = []
         for item in self.a_set:
             list.append(item)
         list.sort()
@@ -31,7 +31,7 @@ class StatSet:
         midPos = size //2
         # if the total divided by 2 is even
         if size % 2 == 0:
-            median = (list[midPos] + list[midPos-1]) / 2.0
+            median = (list[midPos] + list[midPos - 1]) / 2.0
         # if the total divided by 2 is odd
         else:
             median = list[midPos]
@@ -43,12 +43,12 @@ class StatSet:
         for num in self.a_set:
             dev = num - mean
             sumDevSq = sumDevSq + dev * dev
-        return math.sqrt(sumDevSq/(len(self.a_set)-1))
+        return math.sqrt(sumDevSq / (len(self.a_set) - 1))
 
     def count(self):
-        counter=0
+        counter = 0
         for item in self.a_set:
-            counter+=1
+            counter += 1
         return counter
 
     def min(self):
@@ -58,7 +58,7 @@ class StatSet:
         return max(self.a_set)
 
 def main ():
-    set=StatSet()
+    set = StatSet()
     for i in range(5,15,3):
         set.addNumber(i)
     print (set.mean())
