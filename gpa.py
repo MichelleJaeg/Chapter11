@@ -1,5 +1,5 @@
 # gpa.py
-#    Program to find student with highest GPA
+# Program to find student with highest GPA
 # This code provided by textbook
 
 class Student:
@@ -19,12 +19,12 @@ class Student:
         return self.qpoints
 
     def gpa(self):
-        return self.qpoints/self.hours
+        return self.qpoints / self.hours
 
 def makeStudent(infoStr):
     # infoStr is a tab-separated line: name hours qpoints
     # returns a corresponding Student object
-    name, hours, qpoints = infoStr.split("\t")
+    name, hours, qpoints = infoStr.split(" \ t ")
     return Student(name, hours, qpoints)
 
 def main ():
@@ -33,7 +33,7 @@ def main ():
     infile = open(filename, 'r')
 
     # set best to the record for the first student in the file
-    best= makeStudent(infile.readline())
+    best = makeStudent(infile.readline())
 
     # process subsequent lines of the file
     for line in infile:
