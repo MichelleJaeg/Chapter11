@@ -8,37 +8,37 @@ import string
 def main ():
 
     # Get input files
-    file=input("Please enter the name of the original file. ")
-    censoredFile=input("Please enter the name of the file containing the censored words. ")
+    file = input("Please enter the name of the original file. ")
+    censoredFile = input("Please enter the name of the file containing the censored words. ")
 
     # get output file
-    otherFile=input("Please enter the name of the file to write to. ")
-    outfile=open(otherFile, 'w')
+    otherFile = input("Please enter the name of the file to write to. ")
+    outfile = open(otherFile, 'w')
 
     # open files
-    infile=open(file,'r')
-    infile2=open(censoredFile,'r')
+    infile = open(file,'r')
+    infile2 = open(censoredFile,'r')
     # Create lists of words from files
     for line in infile:
-        words=line.split()
+        words = line.split()
     for line in infile2:
-        words2=line.split()
+        words2 = line.split()
 
     for word in words:
         # strip punctuation
-        wordNoPunc=word.strip(string.punctuation)
+        wordNoPunc = word.strip(string.punctuation)
         # Change censored words to *
         if wordNoPunc in words2:
-            newword=""
+            newword = ""
             for letter in word:
                 if not letter in string.punctuation:
-                    newword+="*"
+                    newword += "*"
                 if letter in string.punctuation:
-                    newword+=letter
-                word=newword
+                    newword += letter
+                word = newword
 
         # print text to outfile
-        print (word + " ", file=outfile, end="")
+        print (word + " ", file = outfile, end = "")
 
     # close files
     infile.close()
@@ -56,5 +56,5 @@ def main ():
 
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main ()
